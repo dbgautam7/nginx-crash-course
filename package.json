@@ -4,13 +4,13 @@
     "description": "A Node.js application serving a static HTML file, used for load balancing with NGINX.",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js"
+        "start": "node index.js"
     },
     "author": "DB Gautam",
     "license": "MIT",
     "dependencies": {
-      "express": "^4.17.1",
-      "path": "^0.12.7"
+        "dotenv": "^16.4.7",
+        "express": "^4.17.1",
+        "path": "^0.12.7"
     }
-  }
-  
+}

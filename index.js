@@ -1,17 +1,19 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const app = express();
-const port = 4000;
+require("dotenv").config();
 
-const appName = process.env.APP_NAME || 'My App';
+const port = process.env.PORT || 4000;
 
-app.use('/imgs', express.static(path.join(__dirname, 'images')));
+const appName = process.env.APP_NAME || "My App";
 
-app.use('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-    console.log(`Request served by ${appName}`);
+app.use("/imgs", express.static(path.join(__dirname, "images")));
+
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+  console.log(`Request served by ${appName}`);
 });
 
 app.listen(port, () => {
-    console.log(`${appName} is listening on port ${port}`);
+  console.log(`${appName} is listening on port ${port}`);
 });
